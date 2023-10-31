@@ -92,5 +92,23 @@ namespace _9___Classe_frazione
 
             return (totNumer, comuneDenom);
         }
+
+        public (int, int) Sottrai(int numer, int denom)
+        {
+            int totNumer = Numeratore * denom - numer * Denominatore;
+            int comuneDenom = Denominatore * denom;
+
+            return (totNumer, comuneDenom);
+        }
+
+        public (int, int) Moltiplica(int numer, int denom)
+        {
+            int totNumber = Numeratore * Denominatore;
+            int comuneDenom = Denominatore * denom;
+
+            return (totNumber, comuneDenom);
+        }
+
+
     }
 }
