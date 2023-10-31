@@ -56,5 +56,24 @@ namespace _9___Classe_frazione
             Frazione fraz = (Frazione)frazioneVecchia.MemberwiseClone();
             return fraz;
         }
+
+        public static int MaxComDiv(int numer, int denom)
+        {
+            while (denom != 0)
+            {
+                int temp = denom;
+                denom = numer % denom;
+                numer = temp;
+            }
+
+            return numer;
+        }
+
+        public static int MinComMul(int numer, int denom)
+        {
+            return (numer * denom) / MaxComDiv(numer, denom);
+        }
+
+
     }
 }
