@@ -70,10 +70,10 @@ namespace _9___Classe_frazione
             return numer;
         }
 
-        public static int MinComMul(int numer, int denom)
-        {
-            return (numer * denom) / MaxComDiv(numer, denom);
-        }
+        //public static int MinComMul(int numer, int denom)
+        //{
+        //    return (numer * denom) / MaxComDiv(numer, denom);
+        //}
 
         public (int, int) Semplifica()
         {
@@ -85,34 +85,34 @@ namespace _9___Classe_frazione
             return (simpNumer, simpDenom);
         }
 
-        public (int, int) Somma(int numer, int denom)
+        public (int, int) Somma(Frazione frazione1, Frazione frazione2)
         {
-            int totNumer = Numeratore * denom + numer * Denominatore;
-            int comuneDenom = Denominatore * denom;
+            int totNumer = frazione1.Numeratore * frazione2.Denominatore + frazione2.Numeratore * frazione1.Denominatore;
+            int comuneDenom = frazione1.Denominatore * frazione2.Denominatore;
 
             return (totNumer, comuneDenom);
         }
 
-        public (int, int) Sottrai(int numer, int denom)
+        public (int, int) Sottrai(Frazione frazione1, Frazione frazione2)
         {
-            int totNumer = Numeratore * denom - numer * Denominatore;
-            int comuneDenom = Denominatore * denom;
+            int totNumer = frazione1.Numeratore * frazione2.Denominatore - frazione2.Numeratore * Denominatore;
+            int comuneDenom = frazione1.Denominatore * frazione2.Denominatore;
 
             return (totNumer, comuneDenom);
         }
 
-        public (int, int) Moltiplica(int numer, int denom)
+        public (int, int) Moltiplica(Frazione frazione1, Frazione frazione2)
         {
-            int totNumer = Numeratore * Denominatore;
-            int comuneDenom = Denominatore * denom;
+            int totNumer = frazione1.Numeratore * frazione2.Numeratore;
+            int comuneDenom = frazione2.Denominatore * frazione2.Denominatore;
 
             return (totNumer, comuneDenom);
         }
 
-        public (int, int) Dividi(int numer, int denom)
+        public (int, int) Dividi(Frazione frazione1, Frazione frazione2)
         {
-            int totNumer = Numeratore * denom;
-            int comuneDenom = Denominatore * numer;
+            int totNumer = frazione1.Numeratore * frazione2.Denominatore;
+            int comuneDenom = frazione1.Denominatore * frazione2.Numeratore;
 
             return (totNumer, comuneDenom);
         }
