@@ -69,13 +69,24 @@ namespace _9___Classe_frazione
 
         private void SempBut_Click(object sender, EventArgs e)
         {
-            int num1, num2, den1, den2;
+            int num1 = 0, num2 = 0, den1 = 0, den2 = 0;
 
-            (num1, den1) = frazione1.Semplifica();
-            (num2, den2) = frazione2.Semplifica();
+            
 
-            Display.Items.Add($"La frazione 1 semplificata è: {num1}/{den1}\n");
-            Display.Items.Add($"La frazione 2 semplificata è: {num2}/{den2}\n");
+            //if (String.IsNullOrEmpty(Numer1.Text) && String.IsNullOrEmpty(Denom1.Text))
+            //{
+            //    (num2, den2) = frazione2.Semplifica();
+            //    Display.Items.Add($"La frazione 1 semplificata è: {num1}/{den1}\n");
+            //}
+
+            //if (String.IsNullOrEmpty(Numer2.Text) && String.IsNullOrEmpty(Denom2.Text))
+            //{
+            //    (num1, den1) = frazione1.Semplifica();
+            //    Display.Items.Add($"La frazione 2 semplificata è: {num2}/{den2}\n");
+            //}
+
+
+            check = false;
         }
 
         private void AddBut_Click(object sender, EventArgs e)
@@ -83,6 +94,8 @@ namespace _9___Classe_frazione
             (risultato.Numeratore, risultato.Denominatore) = risultato.Somma(frazione1, frazione2);
 
             Display.Items.Add($"Il risultato della somma è: {risultato.Numeratore}/{risultato.Denominatore}\n");
+
+            check = false;
         }
     }
 }
