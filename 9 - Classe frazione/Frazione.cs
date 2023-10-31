@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,6 +75,22 @@ namespace _9___Classe_frazione
             return (numer * denom) / MaxComDiv(numer, denom);
         }
 
+        public (int, int) Semplifica()
+        {
+            int mcd = MaxComDiv(Numeratore, Denominatore);
 
+            int simpNumer = Numeratore / mcd;
+            int simpDenom = Denominatore / mcd;
+
+            return (simpNumer, simpDenom);
+        }
+
+        public (int, int) Somma(int numer, int denom)
+        {
+            int totNumer = Numeratore * denom + numer * Denominatore;
+            int comuneDenom = Denominatore * denom;
+
+            return (totNumer, comuneDenom);
+        }
     }
 }
