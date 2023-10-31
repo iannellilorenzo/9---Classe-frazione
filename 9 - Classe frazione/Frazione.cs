@@ -103,12 +103,18 @@ namespace _9___Classe_frazione
 
         public (int, int) Moltiplica(int numer, int denom)
         {
-            int totNumber = Numeratore * Denominatore;
+            int totNumer = Numeratore * Denominatore;
             int comuneDenom = Denominatore * denom;
 
-            return (totNumber, comuneDenom);
+            return (totNumer, comuneDenom);
         }
 
+        public (int, int) Dividi(int numer, int denom)
+        {
+            int totNumer = Numeratore * denom;
+            int comuneDenom = Denominatore * numer;
 
+            return (totNumer, comuneDenom);
+        }
     }
 }
