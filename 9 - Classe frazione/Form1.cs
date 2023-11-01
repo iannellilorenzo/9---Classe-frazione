@@ -118,12 +118,6 @@ namespace _9___Classe_frazione
                 Display.Items.Add($"La frazione semplificata è: {num1}/{den1}\n");
             }
 
-            //if (!(String.IsNullOrEmpty(Numer2.Text) && String.IsNullOrEmpty(Denom2.Text)))
-            //{
-            //    (num2, den2) = frazione1.Semplifica();
-            //    Display.Items.Add($"La frazione 2 semplificata è: {num2}/{den2}\n");
-            //}
-
             check = true;
         }
 
@@ -131,7 +125,7 @@ namespace _9___Classe_frazione
         {
             (risultato.Numeratore, risultato.Denominatore) = risultato.Somma(frazione1, frazione2);
 
-            Display.Items.Add($"Il risultato della somma è: {risultato.Numeratore}/{risultato.Denominatore}\n");
+            Display.Items.Add($"Il risultato dell'addizione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
 
             check = true;
         }
@@ -170,6 +164,22 @@ namespace _9___Classe_frazione
                 FrazLab1.Text = "Frazione 1";
                 SalvaBut.Text = "Salva Frazioni";
             }
+        }
+
+        private void SottBut_Click(object sender, EventArgs e)
+        {
+            (risultato.Numeratore, risultato.Denominatore) = risultato.Sottrai(frazione1, frazione2);
+
+            if (risultato.Numeratore == 0)
+            {
+                Display.Items.Add($"Il risultato della sottrazione è: {risultato.Numeratore}\n");
+                check = true;
+                return;
+            }
+
+            Display.Items.Add($"Il risultato della sottrazione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
+
+            check = true;
         }
     }
 }

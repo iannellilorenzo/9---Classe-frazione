@@ -84,6 +84,7 @@
             this.SottBut.TabIndex = 4;
             this.SottBut.Text = "Sottrazione";
             this.SottBut.UseVisualStyleBackColor = true;
+            this.SottBut.Click += new System.EventHandler(this.SottBut_Click);
             // 
             // AddBut
             // 
