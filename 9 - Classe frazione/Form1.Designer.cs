@@ -35,16 +35,17 @@
             this.AddBut = new System.Windows.Forms.Button();
             this.Numer1 = new System.Windows.Forms.TextBox();
             this.Denom1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.NumLab1 = new System.Windows.Forms.Label();
+            this.DenLab1 = new System.Windows.Forms.Label();
             this.Display = new System.Windows.Forms.ListView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.DenLab2 = new System.Windows.Forms.Label();
             this.Denom2 = new System.Windows.Forms.TextBox();
             this.Numer2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.FrazLab1 = new System.Windows.Forms.Label();
+            this.FrazLab2 = new System.Windows.Forms.Label();
             this.SalvaBut = new System.Windows.Forms.Button();
+            this.SingFrazBut = new System.Windows.Forms.CheckBox();
+            this.NumLab2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SempBut
@@ -59,36 +60,36 @@
             // 
             // DivBut
             // 
-            this.DivBut.Location = new System.Drawing.Point(199, 375);
+            this.DivBut.Location = new System.Drawing.Point(184, 397);
             this.DivBut.Name = "DivBut";
-            this.DivBut.Size = new System.Drawing.Size(109, 50);
+            this.DivBut.Size = new System.Drawing.Size(115, 50);
             this.DivBut.TabIndex = 2;
             this.DivBut.Text = "Divisione";
             this.DivBut.UseVisualStyleBackColor = true;
             // 
             // MoltBut
             // 
-            this.MoltBut.Location = new System.Drawing.Point(41, 375);
+            this.MoltBut.Location = new System.Drawing.Point(26, 397);
             this.MoltBut.Name = "MoltBut";
-            this.MoltBut.Size = new System.Drawing.Size(109, 50);
+            this.MoltBut.Size = new System.Drawing.Size(115, 50);
             this.MoltBut.TabIndex = 3;
             this.MoltBut.Text = "Moltiplicazione";
             this.MoltBut.UseVisualStyleBackColor = true;
             // 
             // SottBut
             // 
-            this.SottBut.Location = new System.Drawing.Point(199, 279);
+            this.SottBut.Location = new System.Drawing.Point(184, 326);
             this.SottBut.Name = "SottBut";
-            this.SottBut.Size = new System.Drawing.Size(109, 50);
+            this.SottBut.Size = new System.Drawing.Size(115, 50);
             this.SottBut.TabIndex = 4;
             this.SottBut.Text = "Sottrazione";
             this.SottBut.UseVisualStyleBackColor = true;
             // 
             // AddBut
             // 
-            this.AddBut.Location = new System.Drawing.Point(41, 279);
+            this.AddBut.Location = new System.Drawing.Point(26, 326);
             this.AddBut.Name = "AddBut";
-            this.AddBut.Size = new System.Drawing.Size(109, 50);
+            this.AddBut.Size = new System.Drawing.Size(115, 50);
             this.AddBut.TabIndex = 5;
             this.AddBut.Text = "Addizione";
             this.AddBut.UseVisualStyleBackColor = true;
@@ -108,23 +109,23 @@
             this.Denom1.Size = new System.Drawing.Size(100, 22);
             this.Denom1.TabIndex = 7;
             // 
-            // label1
+            // NumLab1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Numeratore";
+            this.NumLab1.AutoSize = true;
+            this.NumLab1.Location = new System.Drawing.Point(52, 39);
+            this.NumLab1.Name = "NumLab1";
+            this.NumLab1.Size = new System.Drawing.Size(78, 16);
+            this.NumLab1.TabIndex = 8;
+            this.NumLab1.Text = "Numeratore";
             // 
-            // label2
+            // DenLab1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Denominatore";
+            this.DenLab1.AutoSize = true;
+            this.DenLab1.Location = new System.Drawing.Point(202, 39);
+            this.DenLab1.Name = "DenLab1";
+            this.DenLab1.Size = new System.Drawing.Size(92, 16);
+            this.DenLab1.TabIndex = 9;
+            this.DenLab1.Text = "Denominatore";
             // 
             // Display
             // 
@@ -136,23 +137,14 @@
             this.Display.UseCompatibleStateImageBehavior = false;
             this.Display.View = System.Windows.Forms.View.List;
             // 
-            // label3
+            // DenLab2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 16);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Denominatore";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 16);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Numeratore";
+            this.DenLab2.AutoSize = true;
+            this.DenLab2.Location = new System.Drawing.Point(202, 126);
+            this.DenLab2.Name = "DenLab2";
+            this.DenLab2.Size = new System.Drawing.Size(92, 16);
+            this.DenLab2.TabIndex = 14;
+            this.DenLab2.Text = "Denominatore";
             // 
             // Denom2
             // 
@@ -168,49 +160,70 @@
             this.Numer2.Size = new System.Drawing.Size(100, 22);
             this.Numer2.TabIndex = 11;
             // 
-            // label5
+            // FrazLab1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(127, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 16);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Frazione 1";
+            this.FrazLab1.AutoSize = true;
+            this.FrazLab1.Location = new System.Drawing.Point(127, 12);
+            this.FrazLab1.Name = "FrazLab1";
+            this.FrazLab1.Size = new System.Drawing.Size(69, 16);
+            this.FrazLab1.TabIndex = 15;
+            this.FrazLab1.Text = "Frazione 1";
             // 
-            // label6
+            // FrazLab2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 16);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Frazione 2";
+            this.FrazLab2.AutoSize = true;
+            this.FrazLab2.Location = new System.Drawing.Point(127, 110);
+            this.FrazLab2.Name = "FrazLab2";
+            this.FrazLab2.Size = new System.Drawing.Size(69, 16);
+            this.FrazLab2.TabIndex = 16;
+            this.FrazLab2.Text = "Frazione 2";
             // 
             // SalvaBut
             // 
-            this.SalvaBut.Location = new System.Drawing.Point(116, 195);
+            this.SalvaBut.Location = new System.Drawing.Point(101, 255);
             this.SalvaBut.Name = "SalvaBut";
-            this.SalvaBut.Size = new System.Drawing.Size(109, 50);
+            this.SalvaBut.Size = new System.Drawing.Size(115, 50);
             this.SalvaBut.TabIndex = 17;
             this.SalvaBut.Text = "Salva Frazioni";
             this.SalvaBut.UseVisualStyleBackColor = true;
             this.SalvaBut.Click += new System.EventHandler(this.SalvaBut_Click);
+            // 
+            // SingFrazBut
+            // 
+            this.SingFrazBut.AutoSize = true;
+            this.SingFrazBut.Location = new System.Drawing.Point(77, 204);
+            this.SingFrazBut.Name = "SingFrazBut";
+            this.SingFrazBut.Size = new System.Drawing.Size(196, 20);
+            this.SingFrazBut.TabIndex = 18;
+            this.SingFrazBut.Text = "Semplifica Singola Frazione";
+            this.SingFrazBut.UseVisualStyleBackColor = true;
+            this.SingFrazBut.CheckedChanged += new System.EventHandler(this.SingFrazBut_CheckedChanged);
+            // 
+            // NumLab2
+            // 
+            this.NumLab2.AutoSize = true;
+            this.NumLab2.Location = new System.Drawing.Point(52, 129);
+            this.NumLab2.Name = "NumLab2";
+            this.NumLab2.Size = new System.Drawing.Size(78, 16);
+            this.NumLab2.TabIndex = 19;
+            this.NumLab2.Text = "Numeratore";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.NumLab2);
+            this.Controls.Add(this.SingFrazBut);
             this.Controls.Add(this.SalvaBut);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.FrazLab2);
+            this.Controls.Add(this.FrazLab1);
+            this.Controls.Add(this.DenLab2);
             this.Controls.Add(this.Denom2);
             this.Controls.Add(this.Numer2);
             this.Controls.Add(this.Display);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DenLab1);
+            this.Controls.Add(this.NumLab1);
             this.Controls.Add(this.Denom1);
             this.Controls.Add(this.Numer1);
             this.Controls.Add(this.AddBut);
@@ -236,16 +249,17 @@
         private System.Windows.Forms.Button AddBut;
         private System.Windows.Forms.TextBox Numer1;
         private System.Windows.Forms.TextBox Denom1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label NumLab1;
+        private System.Windows.Forms.Label DenLab1;
         private System.Windows.Forms.ListView Display;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label DenLab2;
         private System.Windows.Forms.TextBox Denom2;
         private System.Windows.Forms.TextBox Numer2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label FrazLab1;
+        private System.Windows.Forms.Label FrazLab2;
         private System.Windows.Forms.Button SalvaBut;
+        private System.Windows.Forms.CheckBox SingFrazBut;
+        private System.Windows.Forms.Label NumLab2;
     }
 }
 

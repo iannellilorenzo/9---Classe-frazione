@@ -34,6 +34,40 @@ namespace _9___Classe_frazione
 
         private void SalvaBut_Click(object sender, EventArgs e)
         {
+            bool parse1, parse2, parse3, parse4;
+            int numer1, denom1, numer2, denom2;
+
+            if (SingFrazBut.Checked == true)
+            {
+                if (check == false)
+                {
+                    if (frazione1.Denominatore == 0 || Denom1.Text == "0")
+                    {
+                        MessageBox.Show("Il denominatore deve essere diverso da 0.");
+                        return;
+                    }
+
+                    MessageBox.Show("Confermare le frazioni con l'apposito tasto.");
+                    check = true;
+                    return;
+                }
+
+                parse1 = int.TryParse(Numer1.Text, out numer1);
+                parse2 = int.TryParse(Denom1.Text, out denom1);
+
+                if ((parse1 && parse2) == false)
+                {
+                    MessageBox.Show("Sono accettati solo valori numerici interi.");
+                    return;
+                }
+
+                frazione1.Numeratore = numer1;
+                frazione2.Denominatore = denom1;
+
+                check = false;
+                return;
+            }
+
             if (check == false)
             {
                 if (frazione1.Denominatore == 0 || Denom1.Text == "0" || frazione2.Denominatore == 0 || Denom2.Text == "0")
@@ -43,14 +77,15 @@ namespace _9___Classe_frazione
                 }
 
                 MessageBox.Show("Confermare le frazioni con l'apposito tasto.");
+                check = true;
                 return;
             }
-            
-            bool parse1 = int.TryParse(Numer1.Text, out int numer1);
-            bool parse2 = int.TryParse(Denom1.Text, out int denom1);
 
-            bool parse3 = int.TryParse(Numer2.Text, out int numer2);
-            bool parse4 = int.TryParse(Denom2.Text, out int denom2);
+            parse1 = int.TryParse(Numer1.Text, out numer1);
+            parse2 = int.TryParse(Denom1.Text, out denom1);
+
+            parse3 = int.TryParse(Numer2.Text, out numer2);
+            parse4 = int.TryParse(Denom2.Text, out denom2);
 
             if ((parse1 && parse2 && parse3 && parse4) == false)
             {
@@ -69,24 +104,27 @@ namespace _9___Classe_frazione
 
         private void SempBut_Click(object sender, EventArgs e)
         {
-            int num1 = 0, num2 = 0, den1 = 0, den2 = 0;
+            int num1, den1;
 
-            
+            if (SingFrazBut.Checked == false)
+            {
+                MessageBox.Show("Prima di semplificare, spuntare l'apposita casella.");
+                return;
+            }
 
-            //if (String.IsNullOrEmpty(Numer1.Text) && String.IsNullOrEmpty(Denom1.Text))
+            if (!(String.IsNullOrEmpty(Numer1.Text) && String.IsNullOrEmpty(Denom1.Text)))
+            {
+                (num1, den1) = frazione1.Semplifica();
+                Display.Items.Add($"La frazione semplificata è: {num1}/{den1}\n");
+            }
+
+            //if (!(String.IsNullOrEmpty(Numer2.Text) && String.IsNullOrEmpty(Denom2.Text)))
             //{
-            //    (num2, den2) = frazione2.Semplifica();
-            //    Display.Items.Add($"La frazione 1 semplificata è: {num1}/{den1}\n");
-            //}
-
-            //if (String.IsNullOrEmpty(Numer2.Text) && String.IsNullOrEmpty(Denom2.Text))
-            //{
-            //    (num1, den1) = frazione1.Semplifica();
+            //    (num2, den2) = frazione1.Semplifica();
             //    Display.Items.Add($"La frazione 2 semplificata è: {num2}/{den2}\n");
             //}
 
-
-            check = false;
+            check = true;
         }
 
         private void AddBut_Click(object sender, EventArgs e)
@@ -95,7 +133,43 @@ namespace _9___Classe_frazione
 
             Display.Items.Add($"Il risultato della somma è: {risultato.Numeratore}/{risultato.Denominatore}\n");
 
-            check = false;
+            check = true;
+        }
+
+        private void SingFrazBut_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SingFrazBut.Checked == true)
+            {
+                AddBut.Hide();
+                SottBut.Hide();
+                MoltBut.Hide();
+                DivBut.Hide();
+
+                FrazLab2.Hide();
+                NumLab2.Hide();
+                DenLab2.Hide();
+                Numer2.Hide();
+                Denom2.Hide();
+
+                FrazLab1.Text = "Frazione";
+                SalvaBut.Text = "Salva Frazione";
+            }
+            else
+            {
+                AddBut.Show();
+                SottBut.Show();
+                MoltBut.Show();
+                DivBut.Show();
+
+                FrazLab2.Show();
+                NumLab2.Show();
+                DenLab2.Show();
+                Numer2.Show();
+                Denom2.Show();
+
+                FrazLab1.Text = "Frazione 1";
+                SalvaBut.Text = "Salva Frazioni";
+            }
         }
     }
 }
