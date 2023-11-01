@@ -66,6 +66,7 @@
             this.DivBut.TabIndex = 2;
             this.DivBut.Text = "Divisione";
             this.DivBut.UseVisualStyleBackColor = true;
+            this.DivBut.Click += new System.EventHandler(this.DivBut_Click);
             // 
             // MoltBut
             // 
@@ -75,6 +76,7 @@
             this.MoltBut.TabIndex = 3;
             this.MoltBut.Text = "Moltiplicazione";
             this.MoltBut.UseVisualStyleBackColor = true;
+            this.MoltBut.Click += new System.EventHandler(this.MoltBut_Click);
             // 
             // SottBut
             // 

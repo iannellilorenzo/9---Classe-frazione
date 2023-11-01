@@ -24,7 +24,7 @@ namespace _9___Classe_frazione
             frazione2 = new Frazione();
             risultato = new Frazione();
             check = true;
-            Display.Items.Add("Output:\n\n");
+            Display.Items.Add("Risultati (N.B. I risultati non sono automaticamente semplificati):\n\n");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace _9___Classe_frazione
                 }
 
                 frazione1.Numeratore = numer1;
-                frazione2.Denominatore = denom1;
+                frazione1.Denominatore = denom1;
 
                 check = false;
                 return;
@@ -114,7 +114,7 @@ namespace _9___Classe_frazione
 
             if (!(String.IsNullOrEmpty(Numer1.Text) && String.IsNullOrEmpty(Denom1.Text)))
             {
-                (num1, den1) = frazione1.Semplifica();
+                (num1, den1) = frazione1.Semplifica(frazione1);
                 Display.Items.Add($"La frazione semplificata è: {num1}/{den1}\n");
             }
 
@@ -124,6 +124,13 @@ namespace _9___Classe_frazione
         private void AddBut_Click(object sender, EventArgs e)
         {
             (risultato.Numeratore, risultato.Denominatore) = risultato.Somma(frazione1, frazione2);
+
+            if (risultato.Numeratore == 0)
+            {
+                Display.Items.Add($"Il risultato dell'addizione è: {risultato.Numeratore}\n");
+                check = true;
+                return;
+            }
 
             Display.Items.Add($"Il risultato dell'addizione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
 
@@ -178,6 +185,38 @@ namespace _9___Classe_frazione
             }
 
             Display.Items.Add($"Il risultato della sottrazione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
+
+            check = true;
+        }
+
+        private void MoltBut_Click(object sender, EventArgs e)
+        {
+            (risultato.Numeratore, risultato.Denominatore) = risultato.Moltiplica(frazione1, frazione2);
+
+            if (risultato.Numeratore == 0)
+            {
+                Display.Items.Add($"Il risultato della moltiplicazione è: {risultato.Numeratore}\n");
+                check = true;
+                return;
+            }
+
+            Display.Items.Add($"Il risultato della moltiplicazione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
+
+            check = true;
+        }
+
+        private void DivBut_Click(object sender, EventArgs e)
+        {
+            (risultato.Numeratore, risultato.Denominatore) = risultato.Dividi(frazione1, frazione2);
+
+            if (risultato.Numeratore == 0)
+            {
+                Display.Items.Add($"Il risultato della divisione è: {risultato.Numeratore}\n");
+                check = true;
+                return;
+            }
+
+            Display.Items.Add($"Il risultato della divisione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
 
             check = true;
         }

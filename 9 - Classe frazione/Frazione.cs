@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace _9___Classe_frazione
 {
@@ -75,9 +76,9 @@ namespace _9___Classe_frazione
         //    return (numer * denom) / MaxComDiv(numer, denom);
         //}
 
-        public (int, int) Semplifica()
+        public (int, int) Semplifica(Frazione frazione)
         {
-            int mcd = MaxComDiv(Numeratore, Denominatore);
+            int mcd = MaxComDiv(frazione.Numeratore, frazione.Denominatore);
 
             int simpNumer = Numeratore / mcd;
             int simpDenom = Denominatore / mcd;
