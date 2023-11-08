@@ -151,6 +151,6 @@ namespace _9___Classe_frazione
             return (numer, denom);
         }
 
-        //public (int, int) 
+        //public 
     }
 }
