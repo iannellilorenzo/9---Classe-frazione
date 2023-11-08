@@ -118,4 +118,39 @@ namespace _9___Classe_frazione
             return (totNumer, comuneDenom);
         }
     }
+
+    class FrazioneEstesa : Frazione
+    {
+        public FrazioneEstesa() : base()
+        {
+
+        }
+
+        public FrazioneEstesa(int numeratore, int denominatore) : base(numeratore, denominatore)
+        {
+
+        }
+
+        public FrazioneEstesa(Frazione frazioneVecchia) : base(frazioneVecchia)
+        {
+
+        }
+
+        public double FrazDec(FrazioneEstesa frazione)
+        {
+            double ret = (double)frazione.Numeratore / (double)frazione.Denominatore;
+            return ret;
+        }
+
+        public (int, int) DecFraz(FrazioneEstesa frazione)
+        {
+            int numer = 0, denom = 0;
+
+
+
+            return (numer, denom);
+        }
+
+        //public (int, int) 
+    }
 }
