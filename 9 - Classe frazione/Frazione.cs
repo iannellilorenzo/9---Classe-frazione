@@ -142,13 +142,9 @@ namespace _9___Classe_frazione
             return ret;
         }
 
-        public (int, int) DecFraz(FrazioneEstesa frazione)
+        public (int, int) DecFraz(double dec, double tol)
         {
-            int numer = 0, denom = 0;
-
-
-
-            return (numer, denom);
+            return (0, 0);
         }
 
         public (int, int) Potenza(FrazioneEstesa frazioneBase, double esponente)
