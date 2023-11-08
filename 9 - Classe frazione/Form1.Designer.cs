@@ -46,13 +46,17 @@
             this.SalvaBut = new System.Windows.Forms.Button();
             this.SingFrazBut = new System.Windows.Forms.CheckBox();
             this.NumLab2 = new System.Windows.Forms.Label();
+            this.FrazDecBut = new System.Windows.Forms.Button();
+            this.DecFrazBut = new System.Windows.Forms.Button();
+            this.PotBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SempBut
             // 
-            this.SempBut.Location = new System.Drawing.Point(116, 461);
+            this.SempBut.Enabled = false;
+            this.SempBut.Location = new System.Drawing.Point(40, 520);
             this.SempBut.Name = "SempBut";
-            this.SempBut.Size = new System.Drawing.Size(109, 50);
+            this.SempBut.Size = new System.Drawing.Size(169, 50);
             this.SempBut.TabIndex = 0;
             this.SempBut.Text = "Semplifica";
             this.SempBut.UseVisualStyleBackColor = true;
@@ -60,9 +64,9 @@
             // 
             // DivBut
             // 
-            this.DivBut.Location = new System.Drawing.Point(184, 397);
+            this.DivBut.Location = new System.Drawing.Point(252, 416);
             this.DivBut.Name = "DivBut";
-            this.DivBut.Size = new System.Drawing.Size(115, 50);
+            this.DivBut.Size = new System.Drawing.Size(163, 50);
             this.DivBut.TabIndex = 2;
             this.DivBut.Text = "Divisione";
             this.DivBut.UseVisualStyleBackColor = true;
@@ -70,9 +74,9 @@
             // 
             // MoltBut
             // 
-            this.MoltBut.Location = new System.Drawing.Point(26, 397);
+            this.MoltBut.Location = new System.Drawing.Point(40, 416);
             this.MoltBut.Name = "MoltBut";
-            this.MoltBut.Size = new System.Drawing.Size(115, 50);
+            this.MoltBut.Size = new System.Drawing.Size(169, 50);
             this.MoltBut.TabIndex = 3;
             this.MoltBut.Text = "Moltiplicazione";
             this.MoltBut.UseVisualStyleBackColor = true;
@@ -80,9 +84,9 @@
             // 
             // SottBut
             // 
-            this.SottBut.Location = new System.Drawing.Point(184, 326);
+            this.SottBut.Location = new System.Drawing.Point(252, 345);
             this.SottBut.Name = "SottBut";
-            this.SottBut.Size = new System.Drawing.Size(115, 50);
+            this.SottBut.Size = new System.Drawing.Size(163, 50);
             this.SottBut.TabIndex = 4;
             this.SottBut.Text = "Sottrazione";
             this.SottBut.UseVisualStyleBackColor = true;
@@ -90,9 +94,9 @@
             // 
             // AddBut
             // 
-            this.AddBut.Location = new System.Drawing.Point(26, 326);
+            this.AddBut.Location = new System.Drawing.Point(40, 345);
             this.AddBut.Name = "AddBut";
-            this.AddBut.Size = new System.Drawing.Size(115, 50);
+            this.AddBut.Size = new System.Drawing.Size(169, 50);
             this.AddBut.TabIndex = 5;
             this.AddBut.Text = "Addizione";
             this.AddBut.UseVisualStyleBackColor = true;
@@ -100,14 +104,14 @@
             // 
             // Numer1
             // 
-            this.Numer1.Location = new System.Drawing.Point(41, 61);
+            this.Numer1.Location = new System.Drawing.Point(94, 62);
             this.Numer1.Name = "Numer1";
             this.Numer1.Size = new System.Drawing.Size(100, 22);
             this.Numer1.TabIndex = 6;
             // 
             // Denom1
             // 
-            this.Denom1.Location = new System.Drawing.Point(199, 61);
+            this.Denom1.Location = new System.Drawing.Point(252, 62);
             this.Denom1.Name = "Denom1";
             this.Denom1.Size = new System.Drawing.Size(100, 22);
             this.Denom1.TabIndex = 7;
@@ -115,7 +119,7 @@
             // NumLab1
             // 
             this.NumLab1.AutoSize = true;
-            this.NumLab1.Location = new System.Drawing.Point(52, 39);
+            this.NumLab1.Location = new System.Drawing.Point(105, 40);
             this.NumLab1.Name = "NumLab1";
             this.NumLab1.Size = new System.Drawing.Size(78, 16);
             this.NumLab1.TabIndex = 8;
@@ -124,7 +128,7 @@
             // DenLab1
             // 
             this.DenLab1.AutoSize = true;
-            this.DenLab1.Location = new System.Drawing.Point(202, 39);
+            this.DenLab1.Location = new System.Drawing.Point(255, 40);
             this.DenLab1.Name = "DenLab1";
             this.DenLab1.Size = new System.Drawing.Size(92, 16);
             this.DenLab1.TabIndex = 9;
@@ -133,9 +137,9 @@
             // Display
             // 
             this.Display.HideSelection = false;
-            this.Display.Location = new System.Drawing.Point(348, 12);
+            this.Display.Location = new System.Drawing.Point(459, 8);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(707, 530);
+            this.Display.Size = new System.Drawing.Size(707, 714);
             this.Display.TabIndex = 10;
             this.Display.UseCompatibleStateImageBehavior = false;
             this.Display.View = System.Windows.Forms.View.List;
@@ -143,7 +147,7 @@
             // DenLab2
             // 
             this.DenLab2.AutoSize = true;
-            this.DenLab2.Location = new System.Drawing.Point(202, 126);
+            this.DenLab2.Location = new System.Drawing.Point(255, 127);
             this.DenLab2.Name = "DenLab2";
             this.DenLab2.Size = new System.Drawing.Size(92, 16);
             this.DenLab2.TabIndex = 14;
@@ -151,14 +155,14 @@
             // 
             // Denom2
             // 
-            this.Denom2.Location = new System.Drawing.Point(199, 148);
+            this.Denom2.Location = new System.Drawing.Point(252, 149);
             this.Denom2.Name = "Denom2";
             this.Denom2.Size = new System.Drawing.Size(100, 22);
             this.Denom2.TabIndex = 12;
             // 
             // Numer2
             // 
-            this.Numer2.Location = new System.Drawing.Point(41, 148);
+            this.Numer2.Location = new System.Drawing.Point(94, 149);
             this.Numer2.Name = "Numer2";
             this.Numer2.Size = new System.Drawing.Size(100, 22);
             this.Numer2.TabIndex = 11;
@@ -166,7 +170,7 @@
             // FrazLab1
             // 
             this.FrazLab1.AutoSize = true;
-            this.FrazLab1.Location = new System.Drawing.Point(127, 12);
+            this.FrazLab1.Location = new System.Drawing.Point(184, 9);
             this.FrazLab1.Name = "FrazLab1";
             this.FrazLab1.Size = new System.Drawing.Size(69, 16);
             this.FrazLab1.TabIndex = 15;
@@ -175,7 +179,7 @@
             // FrazLab2
             // 
             this.FrazLab2.AutoSize = true;
-            this.FrazLab2.Location = new System.Drawing.Point(127, 110);
+            this.FrazLab2.Location = new System.Drawing.Point(184, 111);
             this.FrazLab2.Name = "FrazLab2";
             this.FrazLab2.Size = new System.Drawing.Size(69, 16);
             this.FrazLab2.TabIndex = 16;
@@ -183,9 +187,9 @@
             // 
             // SalvaBut
             // 
-            this.SalvaBut.Location = new System.Drawing.Point(101, 255);
+            this.SalvaBut.Location = new System.Drawing.Point(139, 269);
             this.SalvaBut.Name = "SalvaBut";
-            this.SalvaBut.Size = new System.Drawing.Size(115, 50);
+            this.SalvaBut.Size = new System.Drawing.Size(182, 50);
             this.SalvaBut.TabIndex = 17;
             this.SalvaBut.Text = "Salva Frazioni";
             this.SalvaBut.UseVisualStyleBackColor = true;
@@ -194,7 +198,7 @@
             // SingFrazBut
             // 
             this.SingFrazBut.AutoSize = true;
-            this.SingFrazBut.Location = new System.Drawing.Point(77, 204);
+            this.SingFrazBut.Location = new System.Drawing.Point(130, 204);
             this.SingFrazBut.Name = "SingFrazBut";
             this.SingFrazBut.Size = new System.Drawing.Size(196, 20);
             this.SingFrazBut.TabIndex = 18;
@@ -205,17 +209,53 @@
             // NumLab2
             // 
             this.NumLab2.AutoSize = true;
-            this.NumLab2.Location = new System.Drawing.Point(52, 129);
+            this.NumLab2.Location = new System.Drawing.Point(105, 130);
             this.NumLab2.Name = "NumLab2";
             this.NumLab2.Size = new System.Drawing.Size(78, 16);
             this.NumLab2.TabIndex = 19;
             this.NumLab2.Text = "Numeratore";
             // 
+            // FrazDecBut
+            // 
+            this.FrazDecBut.Enabled = false;
+            this.FrazDecBut.Location = new System.Drawing.Point(40, 595);
+            this.FrazDecBut.Name = "FrazDecBut";
+            this.FrazDecBut.Size = new System.Drawing.Size(169, 50);
+            this.FrazDecBut.TabIndex = 20;
+            this.FrazDecBut.Text = "Frazione => Decimale";
+            this.FrazDecBut.UseVisualStyleBackColor = true;
+            this.FrazDecBut.Click += new System.EventHandler(this.FrazDecBut_Click);
+            // 
+            // DecFrazBut
+            // 
+            this.DecFrazBut.Enabled = false;
+            this.DecFrazBut.Location = new System.Drawing.Point(252, 595);
+            this.DecFrazBut.Name = "DecFrazBut";
+            this.DecFrazBut.Size = new System.Drawing.Size(163, 50);
+            this.DecFrazBut.TabIndex = 21;
+            this.DecFrazBut.Text = "Decimale => Frazione";
+            this.DecFrazBut.UseVisualStyleBackColor = true;
+            this.DecFrazBut.Click += new System.EventHandler(this.DecFrazBut_Click);
+            // 
+            // PotBut
+            // 
+            this.PotBut.Enabled = false;
+            this.PotBut.Location = new System.Drawing.Point(252, 520);
+            this.PotBut.Name = "PotBut";
+            this.PotBut.Size = new System.Drawing.Size(163, 50);
+            this.PotBut.TabIndex = 22;
+            this.PotBut.Text = "Potenza";
+            this.PotBut.UseVisualStyleBackColor = true;
+            this.PotBut.Click += new System.EventHandler(this.PotBut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1177, 731);
+            this.Controls.Add(this.PotBut);
+            this.Controls.Add(this.DecFrazBut);
+            this.Controls.Add(this.FrazDecBut);
             this.Controls.Add(this.NumLab2);
             this.Controls.Add(this.SingFrazBut);
             this.Controls.Add(this.SalvaBut);
@@ -263,6 +303,9 @@
         private System.Windows.Forms.Button SalvaBut;
         private System.Windows.Forms.CheckBox SingFrazBut;
         private System.Windows.Forms.Label NumLab2;
+        private System.Windows.Forms.Button FrazDecBut;
+        private System.Windows.Forms.Button DecFrazBut;
+        private System.Windows.Forms.Button PotBut;
     }
 }
 

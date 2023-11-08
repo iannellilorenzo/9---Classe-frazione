@@ -151,6 +151,14 @@ namespace _9___Classe_frazione
             return (numer, denom);
         }
 
-        //public 
+        public (int, int) Potenza(FrazioneEstesa frazioneBase, double esponente)
+        {
+            double numer = 0, denom = 0;
+
+            numer = Math.Pow(frazioneBase.Numeratore, esponente);
+            denom = Math.Pow(frazioneBase.Denominatore, esponente);
+
+            return ((int)numer, (int)denom);
+        }
     }
 }

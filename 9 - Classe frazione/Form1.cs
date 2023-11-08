@@ -15,6 +15,7 @@ namespace _9___Classe_frazione
         Frazione frazione1;
         Frazione frazione2;
         Frazione risultato;
+        FrazioneEstesa frazioneDec;
         bool check;
 
         public Form1()
@@ -23,6 +24,7 @@ namespace _9___Classe_frazione
             frazione1 = new Frazione();
             frazione2 = new Frazione();
             risultato = new Frazione();
+            frazioneDec = new FrazioneEstesa();
             check = true;
             Display.Items.Add("Risultati (N.B. I risultati non sono automaticamente semplificati):\n\n");
         }
@@ -54,8 +56,9 @@ namespace _9___Classe_frazione
 
                 parse1 = int.TryParse(Numer1.Text, out numer1);
                 parse2 = int.TryParse(Denom1.Text, out denom1);
+                parse3 = int.TryParse(Numer2.Text, out numer2);
 
-                if ((parse1 && parse2) == false)
+                if ((parse1 && parse2 && parse3) == false)
                 {
                     MessageBox.Show("Sono accettati solo valori numerici interi.");
                     return;
@@ -63,6 +66,11 @@ namespace _9___Classe_frazione
 
                 frazione1.Numeratore = numer1;
                 frazione1.Denominatore = denom1;
+
+                frazione2.Numeratore = numer2;
+
+                frazioneDec.Numeratore = numer1;
+                frazioneDec.Denominatore = denom1;
 
                 check = false;
                 return;
@@ -141,34 +149,36 @@ namespace _9___Classe_frazione
         {
             if (SingFrazBut.Checked == true)
             {
-                AddBut.Hide();
-                SottBut.Hide();
-                MoltBut.Hide();
-                DivBut.Hide();
+                AddBut.Enabled = false;
+                SottBut.Enabled = false;
+                MoltBut.Enabled = false;
+                DivBut.Enabled = false;
 
-                FrazLab2.Hide();
-                NumLab2.Hide();
-                DenLab2.Hide();
-                Numer2.Hide();
-                Denom2.Hide();
+                SempBut.Enabled = true;
+                FrazDecBut.Enabled = true;
+                DecFrazBut.Enabled = true;
+                PotBut.Enabled = true;
 
-                FrazLab1.Text = "Frazione";
+                Denom2.Enabled = false;
+                Denom2.Text = "1";
+
                 SalvaBut.Text = "Salva Frazione";
             }
             else
             {
-                AddBut.Show();
-                SottBut.Show();
-                MoltBut.Show();
-                DivBut.Show();
+                AddBut.Enabled = true;
+                SottBut.Enabled = true;
+                MoltBut.Enabled = true;
+                DivBut.Enabled = true;
 
-                FrazLab2.Show();
-                NumLab2.Show();
-                DenLab2.Show();
-                Numer2.Show();
-                Denom2.Show();
+                SempBut.Enabled = false;
+                FrazDecBut.Enabled = false;
+                DecFrazBut.Enabled = false;
+                PotBut.Enabled = false;
 
-                FrazLab1.Text = "Frazione 1";
+                Denom2.Enabled = true;
+                Denom2.Text = "";
+
                 SalvaBut.Text = "Salva Frazioni";
             }
         }
@@ -219,6 +229,25 @@ namespace _9___Classe_frazione
             Display.Items.Add($"Il risultato della divisione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
 
             check = true;
+        }
+
+        private void FrazDecBut_Click(object sender, EventArgs e)
+        {
+            double dec = frazioneDec.FrazDec(frazioneDec);
+
+            Display.Items.Add($"Il valore decimale della frazione è: {dec}\n");
+        }
+
+        private void DecFrazBut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PotBut_Click(object sender, EventArgs e)
+        {
+            (risultato.Numeratore, risultato.Denominatore) = frazioneDec.Potenza(frazioneDec, frazione2.Numeratore);
+
+            Display.Items.Add($"Il risultato della potenza è: {risultato.Numeratore}/{risultato.Denominatore}");
         }
     }
 }
