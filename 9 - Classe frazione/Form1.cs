@@ -102,9 +102,25 @@ namespace _9___Classe_frazione
             Display.Items.Add($"Il risultato dell'addizione è: {risultato.Numeratore}/{risultato.Denominatore}\n");
         }
 
-        private void SingFrazBut_CheckedChanged(object sender, EventArgs e)
+        private void OperFondBut_CheckedChanged(object sender, EventArgs e)
         {
-            if (SingFrazBut.Checked == true)
+            if (OperFondBut.Checked == true && AltreFunBut.Checked == false)
+            {
+                AddBut.Enabled = true;
+                SottBut.Enabled = true;
+                MoltBut.Enabled = true;
+                DivBut.Enabled = true;
+
+                SempBut.Enabled = false;
+                FrazDecBut.Enabled = false;
+                DecFrazBut.Enabled = false;
+                PotBut.Enabled = false;
+                ValDec.Enabled = false;
+
+                return;
+            }
+            
+            if (OperFondBut.Checked == false && AltreFunBut.Checked == true)
             {
                 AddBut.Enabled = false;
                 SottBut.Enabled = false;
@@ -118,14 +134,17 @@ namespace _9___Classe_frazione
                 ValDec.Enabled = true;
 
                 Denom2.Enabled = false;
-                Denom2.Text = "1";
+                Denom2.Text = "";
+
+                return;
             }
-            else
+
+            if (OperFondBut.Checked == false && AltreFunBut.Checked == false)
             {
-                AddBut.Enabled = true;
-                SottBut.Enabled = true;
-                MoltBut.Enabled = true;
-                DivBut.Enabled = true;
+                AddBut.Enabled = false;
+                SottBut.Enabled = false;
+                MoltBut.Enabled = false;
+                DivBut.Enabled = false;
 
                 SempBut.Enabled = false;
                 FrazDecBut.Enabled = false;
@@ -135,6 +154,24 @@ namespace _9___Classe_frazione
 
                 Denom2.Enabled = true;
                 Denom2.Text = "";
+
+                return;
+            }
+
+            if (OperFondBut.Checked == true && AltreFunBut.Checked == true)
+            {
+                AddBut.Enabled = false;
+                SottBut.Enabled = false;
+                MoltBut.Enabled = false;
+                DivBut.Enabled = false;
+
+                SempBut.Enabled = false;
+                FrazDecBut.Enabled = false;
+                DecFrazBut.Enabled = false;
+                PotBut.Enabled = false;
+                ValDec.Enabled = false;
+
+                MessageBox.Show("È possibile selezionare solamente un gruppo di funzioni alla volta.");
             }
         }
 
@@ -274,9 +311,7 @@ namespace _9___Classe_frazione
                 return;
             }
 
-            MessageBox.Show(decimale.ToString());
-
-            (risultato.Numeratore, risultato.Denominatore) = frazioneDec.DecFraz(decimale, 0.01);
+            (risultato.Numeratore, risultato.Denominatore) = frazioneDec.DecFraz(ValDec.Text);
 
             Display.Items.Add($"Il valore frazionario è: {risultato.Numeratore}/{risultato.Denominatore}");
         }
@@ -305,6 +340,11 @@ namespace _9___Classe_frazione
             (risultato.Numeratore, risultato.Denominatore) = frazioneDec.Potenza(frazioneDec, espo);
 
             Display.Items.Add($"Il risultato della potenza è: {risultato.Numeratore}/{risultato.Denominatore}");
+        }
+
+        private void AltreFunBut_CheckedChanged(object sender, EventArgs e)
+        {
+            OperFondBut_CheckedChanged(sender, e);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -142,9 +143,21 @@ namespace _9___Classe_frazione
             return ret;
         }
 
-        public (int, int) DecFraz(double dec, double tol)
+        public (int, int) DecFraz(string val)
         {
-            return (0, 0);
+            double numer = 0, denom = 0;
+
+            if (val.Contains(','))
+            {
+                val.Replace(',', '.');
+            }
+
+            string[] intDec = val.Split('.');
+            numer = int.Parse(intDec[0] + intDec[1]);
+
+            denom = Math.Pow(10.0, intDec[1].Length);
+
+            return ((int)numer, (int)denom);
         }
 
         public (int, int) Potenza(FrazioneEstesa frazioneBase, double esponente)
